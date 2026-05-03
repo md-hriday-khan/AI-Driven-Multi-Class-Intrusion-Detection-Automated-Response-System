@@ -6,8 +6,30 @@ CyberAuton SOC is a real-time AI-powered Security Operations Centre (SOC) design
 
 It combines ensemble machine learning (Random Forest, KNN) and deep learning (LSTM) to detect and classify multi-class network attacks and trigger automated responses in real time.
 
+### 📊 Dataset & Experimentation
+Dataset size: 412,000+ network traffic samples
+Classes: Benign, DDoS, Botnet, Bruteforce
+Feature set: 83 CIC-IDS network flow features
+## Models Evaluated
+Random Forest
+K-Nearest Neighbours (KNN)
+Support Vector Machine (SVM)
+Logistic Regression
+Gaussian Naive Bayes
+LSTM (Deep Learning)
 
-
+### 🛠️ Tech Stack
+# Backend
+Python
+FastAPI
+Uvicorn
+WebSockets
+# Frontend
+Next.js (React)
+Tailwind CSS
+Machine Learning
+Scikit-learn
+TensorFlow / Keras
 CyberAuton SOC is an enterprise-grade security operations platform featuring:
 
 ### 🚁 UAV Security Suite
@@ -39,31 +61,69 @@ CyberAuton SOC is an enterprise-grade security operations platform featuring:
 - **Comprehensive Audit Logging**: Complete security event tracking
 
 
+# 🌐 System Implementation
+## Backend
+FastAPI (REST APIs)
+Real-time IDS engine
+WebSocket-based live monitoring
+### Backend Services
 
-## 🏆 System Capabilities
+- **Main API Server** (port 5000): Core security data and analytics  
+- **Vehicle Safety API** (port 5001): Emergency control and monitoring  
+- **Real-time IDS Engine**: Continuous threat detection  
+- **WebSocket Server**: Live data streaming
 
-### Real-time Processing
+## Frontend
+Next.js dashboard
+Real-time threat visualisation
+ML Pipeline
+Data preprocessing & feature extraction
+Model training & evaluation
+Real-time inference integration
+### Frontend Components
 
-- **Live Threat Detection**: Continuous monitoring  
-- **Instant Response**: Sub-second reaction times  
-- **Dynamic Adaptation**: Learning threat patterns  
-- **Scalable Architecture**: Enterprise-ready deployment
+- **67+ Security Modules**: Comprehensive threat monitoring  
+- **Real-time Dashboards**: Live threat visualization  
+- **Interactive Controls**: Emergency response interfaces  
+- **Export Capabilities**: PCAP, MITRE framework data
 
-### Multi-Domain Security
+## 🎯 System Architecture
 
-- **Air Domain**: UAV and drone protection  
-- **Ground Domain**: Vehicle safety systems  
-- **Network Domain**: Traffic analysis and protection  
-- **Data Domain**: Privacy and integrity assurance
+Frontend (React)         Backend Services
 
-### Automation & Intelligence
+Port 3000               Port 5000, 5001, 8080, 8081
 
-- **AI-Powered Detection**: Machine learning algorithms  
-- **Automated Response**: Threat mitigation workflows  
-- **Predictive Analytics**: Proactive threat identification  
-- **Continuous Learning**: Adaptive security posture
+     │                          │
 
+     ├─────── HTTP ────────────►│ Backend API (5000)
 
+     │                          │ \- Threat intelligence
+
+     │                          │ \- Network monitoring
+
+     │                          │ \- MITRE framework
+
+     │                          │
+
+     ├─────── HTTP ────────────►│ Vehicle Safety (5001)
+
+     │                          │ \- Emergency controls
+
+     │                          │ \- System health
+
+     │                          │
+
+     ├────── WebSocket ────────►│ Main WS (8080) \[Optional\]
+
+     │                          │ \- Real-time updates
+
+     │                          │
+
+     └────── WebSocket ────────►│ Enhanced IDS (8081) \[Optional\]
+
+                                │ \- CIC-IDS features
+
+                              
 This README provides setup and running instructions for both the **Frontend** and **Backend** of the Artifact Autonomous project.
 
 **Running the Frontend**
@@ -110,63 +170,31 @@ uvicorn main:app \--reload
 
 - Open: [http://localhost:3000](http://localhost:3000)  
   - Login: Use any credentials (demo mode)
+  - 
+## 🏆 System Capabilities
 
+### Real-time Processing
 
+- **Live Threat Detection**: Continuous monitoring  
+- **Instant Response**: Sub-second reaction times  
+- **Dynamic Adaptation**: Learning threat patterns  
+- **Scalable Architecture**: Enterprise-ready deployment
 
-## 🌐 System Architecture
+### Multi-Domain Security
 
-### Backend Services
+- **Air Domain**: UAV and drone protection  
+- **Ground Domain**: Vehicle safety systems  
+- **Network Domain**: Traffic analysis and protection  
+- **Data Domain**: Privacy and integrity assurance
 
-- **Main API Server** (port 5000): Core security data and analytics  
-- **Vehicle Safety API** (port 5001): Emergency control and monitoring  
-- **Real-time IDS Engine**: Continuous threat detection  
-- **WebSocket Server**: Live data streaming
+### Automation & Intelligence
 
-### Frontend Components
+- **AI-Powered Detection**: Machine learning algorithms  
+- **Automated Response**: Threat mitigation workflows  
+- **Predictive Analytics**: Proactive threat identification  
+- **Continuous Learning**: Adaptive security posture
 
-- **67+ Security Modules**: Comprehensive threat monitoring  
-- **Real-time Dashboards**: Live threat visualization  
-- **Interactive Controls**: Emergency response interfaces  
-- **Export Capabilities**: PCAP, MITRE framework data
-
-## 🎯 System Architecture
-
-Frontend (React)         Backend Services
-
-Port 3000               Port 5000, 5001, 8080, 8081
-
-     │                          │
-
-     ├─────── HTTP ────────────►│ Backend API (5000)
-
-     │                          │ \- Threat intelligence
-
-     │                          │ \- Network monitoring
-
-     │                          │ \- MITRE framework
-
-     │                          │
-
-     ├─────── HTTP ────────────►│ Vehicle Safety (5001)
-
-     │                          │ \- Emergency controls
-
-     │                          │ \- System health
-
-     │                          │
-
-     ├────── WebSocket ────────►│ Main WS (8080) \[Optional\]
-
-     │                          │ \- Real-time updates
-
-     │                          │
-
-     └────── WebSocket ────────►│ Enhanced IDS (8081) \[Optional\]
-
-                                │ \- CIC-IDS features
-
-
-
+   
 ## 📚 Documentation
 
 ### API Documentation
