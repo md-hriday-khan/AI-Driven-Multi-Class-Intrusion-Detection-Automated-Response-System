@@ -6,17 +6,7 @@ CyberAuton SOC is a real-time AI-powered Security Operations Centre (SOC) design
 
 It combines ensemble machine learning (Random Forest, KNN) and deep learning (LSTM) to detect and classify multi-class network attacks and trigger automated responses in real time.
 
-📊 Dataset & Experimentation
-Dataset size: 412,000+ network traffic samples
-Classes: Benign, DDoS, Botnet, Bruteforce
-Feature set: 83 CIC-IDS network flow features
-Models Evaluated
-Random Forest
-K-Nearest Neighbours (KNN)
-Support Vector Machine (SVM)
-Logistic Regression
-Gaussian Naive Bayes
-LSTM (Deep Learning)
+
 
 CyberAuton SOC is an enterprise-grade security operations platform featuring:
 
