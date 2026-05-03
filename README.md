@@ -20,7 +20,7 @@ It combines ensemble machine learning (Random Forest, KNN) and deep learning (LS
 
 
 
-> **Enterprise-grade, real-time AI security platform** protecting autonomous systems (UAVs, vehicles, and networks) from multi-vector cyberattacks — with sub-second detection and automated incident response.
+> **Enterprise-grade, real-time AI security platform** protecting autonomous systems (UAVs, vehicles, and networks) from multi-vector cyberattacks with sub-second detection and automated incident response.
 
 </div>
 
@@ -340,7 +340,7 @@ ws://localhost:8081  →  Real-time IDS classification stream
 |---|---|
 | **Status** | ✅ Fully Operational |
 | **Active Modules** | 67+ security components |
-| **Version** | 1.0.0 |
+| **Version** | 1.0.5 |
 | **Last Updated** | November 2025 |
 | **Institution** | University of Bedfordshire |
 
