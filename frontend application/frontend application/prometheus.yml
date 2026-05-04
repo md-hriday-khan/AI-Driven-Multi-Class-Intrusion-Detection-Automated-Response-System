@@ -1,0 +1,68 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "shield_alerts.yml"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'shield-soc'
+    static_configs:
+      - targets: ['shield-soc:3000']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  - job_name: 'websocket-server'
+    static_configs:
+      - targets: ['websocket-server:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 5s
+
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['postgres-db:5432']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis-cache:6379']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+
+  - job_name: 'nginx'
+    static_configs:
+      - targets: ['nginx-lb:80']
+    metrics_path: '/nginx_status'
+    scrape_interval: 10s
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+# Security monitoring specific scrape configs
+  - job_name: 'shield-metrics'
+    static_configs:
+      - targets: ['shield-soc:3000']
+    metrics_path: '/api/metrics'
+    scrape_interval: 5s
+    params:
+      module: [security_metrics]
+
+  - job_name: 'threat-intelligence'
+    static_configs:
+      - targets: ['shield-soc:3000']
+    metrics_path: '/api/threats/metrics'
+    scrape_interval: 10s
+
+  - job_name: 'attack-detection'
+    static_configs:
+      - targets: ['shield-soc:3000']
+    metrics_path: '/api/detection/metrics'
+    scrape_interval: 5s
